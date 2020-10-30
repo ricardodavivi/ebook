@@ -8,27 +8,57 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'cardapio',
+        loadChildren: () => import('../cardapio/cardapio-list/cardapio-list.module').then(m => m.CardapioListPageModule)
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'new/:productId',
+        loadChildren: () => import('../curso/curso.module').then( m => m.CursoPageModule)
       },
+      {
+        path: 'curso-item',
+        loadChildren: () => import('../cardapio/curso-item/curso-item.module').then( m => m.CursoItemPageModule)
+      },
+      
+      
       {
         path: 'tab3',
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {
+        path: 'apps',
+        loadChildren: () => import('../apps/apps.module').then( m => m.AppsPageModule)
+      },
+      
+      {
+        path: 'user',
+        
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../users/user-info/user-info.module')
+              .then(m => m.UserInfoPageModule),
+          },
+          {
+            path: 'personal-info',
+            loadChildren: () => import('../users/personal-info/personal-info.module').then(m => m.PersonalInfoPageModule)
+          },
+          {
+            path: 'change-password',
+            loadChildren: () => import('../users/change-password/change-password.module').then(m => m.ChangePasswordPageModule)
+          }
+        ]
+      },
+      {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/cardapio',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/cardapio',
     pathMatch: 'full'
   }
 ];
