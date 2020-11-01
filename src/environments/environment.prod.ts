@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api:'https://ebooksdoric-com.umbler.net'
+  api:'http://ebooksdoric-com.umbler.net'
 };

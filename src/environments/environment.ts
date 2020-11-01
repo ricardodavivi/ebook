@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api:'https://ebooksdoric-com.umbler.net'
+  api:'http://ebooksdoric-com.umbler.net'
 };
 
 /*
