@@ -1,4 +1,16 @@
 .text-wrap {
     white-space: pre-wrap;
-} 
+}
+ion-content {
+    ion-item {
+        .search {
+            width: 100%;
+            height: 100px;
+            background-image: url('/assets/icon/app.jpg');
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+}
 

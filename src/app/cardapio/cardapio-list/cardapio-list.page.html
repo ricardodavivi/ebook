@@ -11,21 +11,24 @@
 
 <ion-content>
   <ion-item>
-    <ion-searchbar horizontal="end"class="search" color="primary" inputmode="search" showCancelButton="focus" (ionChange)="onSearchChange($event)"
+    <ion-searchbar  horizontal="end"class="search" color="translucid" inputmode="search" showCancelButton="focus" (ionChange)="onSearchChange($event)"
     (ionCancel)="onSearchCancel()"></ion-searchbar>
   </ion-item>
 
   <ion-item-group *ngFor="let category of cardapio">
-    <ion-item-divider color="primary">
-      <ion-label>{{category.categoryName}}</ion-label>
+    <ion-item-divider color="secondary">
+      <ion-label >{{category.categoryName}}</ion-label>
     </ion-item-divider>   
     
     <ion-grid>
       <ion-row>
         <ion-col>
+          
           <app-cardapio-item *ngFor="let product of category.products" [product]="product"
             [routerLink]="['/tabs/new', product._id]">
+            
           </app-cardapio-item>
+          
         </ion-col>
       </ion-row>
     </ion-grid>
