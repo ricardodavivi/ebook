@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api:'https://ebooksdoalex-com.umbler.net'
+  api:'https://ebooksdoric-com.umbler.net'
   //api:'http://localhost:3000'
 };
 
